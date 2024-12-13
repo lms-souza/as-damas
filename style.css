@@ -1,0 +1,62 @@
+/* Estilo para destacar o quadrado */
+.highlight {
+    box-shadow: inset 0 0 10px 5px rgba(255, 255, 0, 0.8);
+    background: rgba(255, 255, 0, 0.2);
+}
+
+/* Estilo para quadrados cinza */
+.gray {
+    background: #a9a9a9 !important;
+}
+
+/* Estilo para histórico de movimentos */
+#history {
+    max-height: 250px;
+    overflow-y: auto;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Estilos adicionais para um visual mais moderno */
+
+body {
+    background-color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    color: #343a40;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #343a40;
+    color: white;
+}
+
+.card-body {
+    background-color: white;
+}
+
+.form-select {
+    border: 2px solid #343a40;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+#board {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

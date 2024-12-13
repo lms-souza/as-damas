@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
+        integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="https://chessboardjs.com/favicon.ico" type="image/x-icon">
+    <title>Jogo de Damas</title>
+</head>
+
+<body>
+
+    <div class="container-fluid px-5 pt-5">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <h2 class="text-center mb-0">Jogo de Damas AI</h2>
+                
+                <div class="my-4">
+                    <select class="form-select mb-3" id="pilihan-game">
+                        <option selected>Escolher Jogo</option>
+                        <option value="lawan">Jogar contra o Computador</option>
+                        <option value="komputer">Computador vs Computador</option>
+                    </select>
+                    <select class="form-select mb-3 d-none" id="level-hitam">
+                        <option selected>Escolher Nível das Peças Pretas</option>
+                        <option value="3">Peças Pretas Nível 1 (Profundidade AI = 3)</option>
+                        <option value="6">Peças Pretas Nível 2 (Profundidade AI = 6)</option>
+                        <option value="8">Peças Pretas Nível 3 (Profundidade AI = 8)</option>
+                        <option value="10">Peças Pretas Nível 4 (Profundidade AI = 10)</option>
+                    </select>
+                    <select class="form-select mb-3 d-none" id="level-putih">
+                        <option selected>Escolher Nível das Peças Brancas</option>
+                        <option value="3">Peças Brancas Nível 1 (Profundidade AI = 3)</option>
+                        <option value="6">Peças Brancas Nível 2 (Profundidade AI = 6)</option>
+                        <option value="8">Peças Brancas Nível 3 (Profundidade AI = 8)</option>
+                        <option value="10">Peças Brancas Nível 4 (Profundidade AI = 10)</option>
+                    </select>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-success" disabled id="tombol-mulai">Iniciar Jogo</button>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h5>Histórico de Movimentos <span class="lama-bermain"></span></h5>
+                    </div>
+                    <div class="card-body" id="history">
+                        <ul class="list-group" id="list-history"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex justify-content-center">
+                    <div id="board" style="width: 400px"></div>
+                </div>
+                <div class="row mt-3 text-center">
+                    <div class="col-sm-6 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Vez</h5>
+                                <p class="mb-0" id="giliran"> - </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Vencedor</h5>
+                                <p class="mb-0" id="pemenang"> - </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-danger d-none" id="tombol-menyerah">Desistir</button>
+                    <button class="btn btn-danger d-none" id="tombol-hentikan">Parar Jogo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"
+        integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="/checker-teste.js"></script>
+    <script src="/AlphaBeta.js"></script>
+    <script src="/manipuladorDoJogo.js"></script>
+</body>
+
+</html>
